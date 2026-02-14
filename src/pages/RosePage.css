@@ -1,0 +1,477 @@
+.rose-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 50%, #ff69b4 100%);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.petals-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: fall-petal linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall-petal {
+  0% {
+    top: -10%;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 110%;
+    transform: translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.rose-sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.rose-sparkle {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: sparkle-rose 3s infinite;
+  opacity: 0;
+}
+
+@keyframes sparkle-rose {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+}
+
+.rose-content {
+  position: relative;
+  text-align: center;
+  z-index: 10;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+  animation: fadeInScale 0.8s ease;
+  backdrop-filter: blur(10px);
+}
+
+.rose-content.accepted {
+  animation: celebrate 0.5s ease;
+}
+
+@keyframes celebrate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rose-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.rose-stem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: grow-rose 1.5s ease-out;
+}
+
+@keyframes grow-rose {
+  0% {
+    transform: translateY(100px) scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(0) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.rose-flower {
+  font-size: clamp(6rem, 20vw, 10rem);
+  animation: bloom 2s ease-in-out infinite;
+  filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.4));
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.rose-flower:hover {
+  animation: spin-rose 0.8s ease;
+  transform: scale(1.1);
+}
+
+@keyframes spin-rose {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bloom {
+  0%, 100% {
+    transform: scale(1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.rose-leaf {
+  position: absolute;
+  font-size: 2rem;
+  top: 50%;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.rose-leaf.left {
+  left: -40px;
+  animation-delay: 0.2s;
+}
+
+.rose-leaf.right {
+  right: -40px;
+  animation-delay: 0.4s;
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.rose-message {
+  animation: slideUp 1s ease 0.5s backwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rose-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #ff1493;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.2);
+  animation: glow-title 2s ease-in-out infinite;
+}
+
+@keyframes glow-title {
+  0%, 100% {
+    text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.2);
+  }
+  50% {
+    text-shadow: 2px 2px 8px rgba(255, 20, 147, 0.4), 0 0 20px rgba(255, 105, 180, 0.3);
+  }
+}
+
+.rose-text {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.accept-rose-button {
+  padding: 1.2rem 2.5rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff1493 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: pulse-button 2s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes pulse-button {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 20, 147, 0.6);
+  }
+}
+
+.accept-rose-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.accept-rose-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.accept-rose-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+}
+
+.accept-rose-button:active {
+  transform: translateY(-1px) scale(1);
+}
+
+.button-icon {
+  font-size: 1.3em;
+  animation: bounce-icon 1s infinite;
+}
+
+@keyframes bounce-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.acceptance-message {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hearts-burst {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.burst-heart {
+  font-size: 2rem;
+  animation: burst-out 1s ease-out forwards;
+  display: inline-block;
+}
+
+@keyframes burst-out {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.thank-you-text {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  color: #ff1493;
+  font-weight: 600;
+  margin-top: 1rem;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .rose-page {
+    padding: 0.5rem;
+  }
+
+  .rose-content {
+    padding: 2rem 1.5rem;
+    border-radius: 25px;
+  }
+
+  .rose-flower {
+    font-size: clamp(5rem, 18vw, 8rem);
+  }
+
+  .rose-leaf {
+    font-size: 1.5rem;
+  }
+
+  .rose-leaf.left {
+    left: -30px;
+  }
+
+  .rose-leaf.right {
+    right: -30px;
+  }
+
+  .rose-title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  .rose-text {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .accept-rose-button {
+    padding: 1.1rem 2.2rem;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hearts-burst {
+    gap: 0.3rem;
+  }
+
+  .burst-heart {
+    font-size: 1.5rem;
+  }
+
+  .petal {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rose-content {
+    padding: 1.8rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .rose-flower {
+    font-size: clamp(4rem, 16vw, 6rem);
+  }
+
+  .rose-leaf {
+    font-size: 1.2rem;
+  }
+
+  .rose-leaf.left {
+    left: -25px;
+  }
+
+  .rose-leaf.right {
+    right: -25px;
+  }
+
+  .rose-title {
+    font-size: clamp(1.6rem, 5.5vw, 2rem);
+  }
+
+  .rose-text {
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+  }
+
+  .accept-rose-button {
+    padding: 1rem 2rem;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+  }
+
+  .thank-you-text {
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .rose-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .rose-flower {
+    font-size: 4rem;
+  }
+
+  .accept-rose-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
