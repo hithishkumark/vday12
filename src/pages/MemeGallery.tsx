@@ -22,7 +22,7 @@ function MemeGallery({ onComplete }: MemeGalleryProps) {
     {
       id: 0,
       quote: "ఇది మన మొదటి సెల్ఫీ… ఈ ఫోటో వెనుక ఎన్నో జ్ఞాపకాలు, ఎంతో ప్రేమ ఉందో! 🌙❤️",
-      image: "./public/Memes/first-selfie.jpg"
+      image: "/Memes/first-selfie.jpg"
     },
     {
       id: 1,
