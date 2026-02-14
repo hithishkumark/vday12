@@ -93,7 +93,7 @@ function Proposal() {
             autoPlay
             style={{ marginTop: "2rem", borderRadius: "10px" }}
           >
-            <source src="./public/Memes/final.mp4" type="video/mp4" />
+            <source src="/Memes/final.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
