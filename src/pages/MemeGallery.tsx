@@ -27,22 +27,22 @@ function MemeGallery({ onComplete }: MemeGalleryProps) {
     {
       id: 1,
       quote: "నిన్ను మొదటిసారి చీరలో చూసినప్పుడు, ఒక అమ్మాయి ఇంత అందంగా పుట్టడం తప్పు అనిపించింది… 💞✨",
-      image: "./public/Memes/saree.jpg"
+      image: "/Memes/saree.jpg"
     },
     {
       id: 2,
       quote: "ఇలా దొంగగా వీడియో కాల్ మాట్లాడిన రోజులు తలచుకుంటే, ఏదో తెలియని ఒక ఫీలింగ్ వస్తుంది గుండెల్లో… 💞",
-      image: "./public/Memes/vc.jpg"
+      image: "/Memes/vc.jpg"
     },
     {
       id: 3,
       quote: "నువ్వు నాతో ఉంటే, ఏదో తెలియని ఒక ఆనందం, ధైర్యం అన్నీ వస్తాయి.ఎన్ని గొడవలు పడినా, ఏమి చేసినా… you are my one and only soul",
-      image: "./public/Memes/hand.jpg"
+      image: "/Memes/hand.jpg"
     },
     {
       id: 4,
       quote: "ఇది నువ్వు నాకు పంపిన మొదటి ఫోటో… ఆ రోజు నన్ను నేనే మరిచిపోయిన రోజు.",
-      image: "./public/Memes/first.jpg"
+      image: "/Memes/first.jpg"
     },
     {
       id: 5,
